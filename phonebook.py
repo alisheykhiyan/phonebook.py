@@ -29,8 +29,7 @@ while choosen_command != "Enter":
            p.write(contactname,"=",contactnum) 
            print (p.read())
            p.close()
-if choosen_command == "Enter" :
-   close()  
+ 
        
            
     
