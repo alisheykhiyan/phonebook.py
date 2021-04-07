@@ -5,9 +5,10 @@ while choosen_command != "Enter":
    if choosen_command == '1':
        contactname = input ("Enter the contacts name:")
        contactnum = int(input("Enter the contacts number:"))
-       p = open ('phonebook.txt','a')
-       phonebook_parts = (contactname,":",contactnum) 
-       p.write(phonebook_parts)
+       p = open ('phonebook.txt','w')
+       # ("pp") equals to phonebooks_parts .
+       pp = (contactname,":",contactnum) 
+       p.write(pp)
        p.close()
    if choosen_command == '2' :
        p = open ('phonebook.txt','r') 
