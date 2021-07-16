@@ -7,7 +7,7 @@ while choosen_command != "Enter":
    if choosen_command == '1':
        contactname = input ("Enter the contacts name:")
        contactnum = int(input("Enter the contacts number:"))
-       p = open ('phonebook.txt','w')
+       p = open ('phonebook.txt','a')
        # ("pp") equals to phonebooks_parts .
        pp = (contactname,":",contactnum) 
        p.write(pp)
