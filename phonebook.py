@@ -5,8 +5,10 @@ print ("------------------------------ welcom to phonebook ---------------------
 
 print ("Enter number 1 to add a number or 2 to quit the program:")
 
+# Starting the main loop.
+
 while True :
-    run_command_number =int(input("Enter the number (1/2) :"))
+    run_command_number = int(input("Enter the number (1/2) :"))
 
     # If user needs to add number(enters '1'):
     if run_command_number == 1:
