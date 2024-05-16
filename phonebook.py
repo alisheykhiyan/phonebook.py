@@ -3,7 +3,7 @@ print("---------------Welcome to phonebook---------------")
 
 
 # Run command
-command = input("To add a contact enter number 1 and to exit, print number 0 : ")
+command = input("To add a contact enter number 1 and to exit, enter number 0 : ")
 
 
 if command == "0":
@@ -16,7 +16,7 @@ elif command == "1":
 
 else:
     print("ERROR: Invalid input")
-    command = input("To add a contact enter number 1 and to exit, print number 0 : ")
+    command = input("To add a contact enter number 1 and to exit, enter number 0 : ")
 
 
 if command != "1":
@@ -24,8 +24,8 @@ if command != "1":
 
 else:
     while True:
-        command = input("To see the contacts name and number press 1, to add a new contact press 2,"
-                        "and press 0 to quit the program : ")
+        command = input("To view the contacts name and number enter '1', to add a new contact enter '2' ",
+                        "and enter '0' to quit the program : ")
 
         if command == "0":
             print("Thanks for running the program !")
