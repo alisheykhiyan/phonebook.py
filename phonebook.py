@@ -1,42 +1,51 @@
-# Phonebook.py
-print("---------------Welcome to phonebook---------------")
+# Global variables 
+contacts_name = None
+contacts_num = None
 
 
-# Run command
-command = input("To add a contact enter number 1 and to exit, enter number 0 : ")
+def add_contact():
+    global contacts_name, contacts_num  
+    
+    contacts_name = input('Enter the contact name: ')
+    contacts_num = input('Enter the contact number: ')
+    print('Contact added successfully!')
 
 
-if command == "0":
-    print("Thanks for running the program !")
-    exit()
-
-elif command == "1":
-    name = input("Enter the contacts name : ")
-    num = input("Enter the contacts number : ")
-
-else:
-    print("ERROR: Invalid input")
-    command = input("To add a contact enter number 1 and to exit, enter number 0 : ")
+def view_contact():
+    global contacts_name, contacts_num  
+    
+    if contacts_name is not None and contacts_num is not None:
+        print(f'Contact Name: {contacts_name}')
+        print(f'Contact Number: {contacts_num}')
+    
+    else:
+        print('No contact found!')
 
 
-if command != "1":
-    pass
-
-else:
+def main():
     while True:
-        command = input("To view the contacts name and number enter '1', to add a new contact enter '2' ",
-                        "and enter '0' to quit the program : ")
-
-        if command == "0":
-            print("Thanks for running the program !")
+        print('\nPhone Book Menu:')
+        
+        choice = input('\nEnter "1" to add a contact, "2" to view the contact and "3" to exit: ')
+        
+        if choice == '1':
+            add_contact()
+        
+        elif choice == '2':
+            view_contact()
+        
+        elif choice == '3':
+            print('Exiting the program...')
             break
-
-        elif command == "1":
-            print(f"Name: {name} ", f"Number: {num}")
-
-        elif command == "2":
-            name = input("Enter the contacts name : ")
-            num = int(input("Enter the contacts numer : "))
-
+        
         else:
-            print("ERROR: Invalid input")
+            print('Invalid choice!')
+
+
+if __name__ == '__main__':
+    start_program = input('Do you want to run the phone book program? (yes/no): ').strip().lower()
+    if start_program == 'yes':
+        main()
+    
+    else:
+        print('Program not started.')
