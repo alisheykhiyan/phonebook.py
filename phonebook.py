@@ -26,7 +26,7 @@ def main():
     while True:
         print('\nPhone Book Menu:')
         
-        choice = input('\nEnter "1" to add a contact, "2" to view the contact and "3" to exit: ')
+        choice = input('\nEnter "1" to add a contact, "2" to view the contact and "0" to exit: ')
         
         if choice == '1':
             add_contact()
@@ -34,7 +34,7 @@ def main():
         elif choice == '2':
             view_contact()
         
-        elif choice == '3':
+        elif choice == '0':
             print('Exiting the program...')
             break
         
@@ -42,10 +42,14 @@ def main():
             print('Invalid choice!')
 
 
-if __name__ == '__main__':
+def starter():
     start_program = input('Do you want to run the phone book program? (yes/no): ').strip().lower()
     if start_program == 'yes':
         main()
     
     else:
         print('Program not started.')
+
+
+if __name__ == '__main__':
+    starter()
