@@ -1,60 +1,50 @@
-# Global variables
-contacts_name = None
-contacts_num = None
+import os
 
+contacts_file = 'contacts.txt'
 
-def add_contact():
-    global contacts_name, contacts_num
-
-    contacts_name = input('Enter the contact name: ')
-    contacts_num = input('Enter the contact number: ')
+def file_initializer(contact_name, contact_num):
+    # Writes a contact's name and number to the contacts file.
+    with open(contacts_file, 'a') as file:
+        file.write(f'{contact_name}: {contact_num}\n')
     print('Contact added successfully!')
 
 
-def view_contact():
-    global contacts_name, contacts_num
+def add_contact():
+    # Prompts the user to enter a contact name and number, then writes it to the file.
+    contact_name = input('Enter the contact name: ')
+    contact_num = input('Enter the contact number: ')
+    file_initializer(contact_name, contact_num)
 
-    if contacts_name is not None and contacts_num is not None:
-        print(f'Contact Name: {contacts_name}')
-        print(f'Contact Number: {contacts_num}')
-    
-    else:
-        print('No contact found!')
-
-
-def exit_program():
-    print('Thanks for your time.', '\nExiting the program...')
-    exit()
 
 
 def main():
+    # Main menu loop for the phone book program.
     while True:
         print('\nPhone Book Menu:')
+        print('1. Add a contact')
+        print('0. Exit')
         
-        choice = input('\nEnter "1" to add a contact, "2" to view the contact and "0" to exit: ')
+        choice = input('Enter your choice: ')
 
         if choice == '1':
             add_contact()
-        
-        elif choice == '2':
-            view_contact()
-        
         elif choice == '0':
-            exit_program()
-        
+            print('Exiting program...')
+            break
         else:
             print('Invalid choice!')
 
 
 def starter():
+    # Asks the user if they want to run the phone book program.
     start_program = input('Do you want to run the phone book program? (yes/no): ').strip().lower()
     if start_program == 'yes':
         main()
-    
     else:
-        exit_program()
-
+        print('Thanks for your time.', '\nExiting the program...')
+        exit()
 
 if __name__ == '__main__':
+    print("Current Working Directory:", os.getcwd())
     starter()
     
